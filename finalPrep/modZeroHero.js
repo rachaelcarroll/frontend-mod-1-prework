@@ -2,19 +2,19 @@
 
 // Declare two variables - heroName AND specialAbility - set to strings
 
-var heroName = "Taco Cat"
-var specialAbility = "Making tacos appear out of thin air"
+var heroName = "Taco Cat";
+var specialAbility = "Making tacos appear out of thin air";
 
 // Declare two variables - greeting AND catchphrase
 //   greeting should be assigned to a string that uses concatenation to include the heroName
 //   catchphrase should be assigned to a string that uses interpolation to include the specialAbility
 
 var greeting = "Hello, my name is " + heroName;
-var catchphrase = "Watch me " + ${specialAbility} + " right before your eyes!";
+var catchphrase = "Watch me ${specialAbility} right before your eyes!";
 
 // Declare two variables - power AND energy - set to integers
-var power = 2
-var energy = 50
+var power = 2;
+var energy = 50;
 
 // Declare two variables - fullPower AND fullEnergy
 //   fullPower should multiply your current power by 500
@@ -41,7 +41,7 @@ console.log(sidekicks[0]);
 
 // Print the last archEnemy to the console
 
-console.log(archEnemies[2]);
+console.log(archEnemies[2])
 
 // Write some code to add a new archEnemy to the archEnemies array
 
@@ -53,7 +53,7 @@ console.log(archEnemies);
 
 // Remove the first sidekick from the sidekicks array
 
-sidekicks.shift(0);
+sidekicks.shift();
 
 // Print the sidekicks array to console to ensure you added a new sidekick
 
@@ -64,10 +64,6 @@ console.log(sidekicks);
 //   - saveTheDay should be a string a hero would say once they save the day 
 //   - badExcuse should be a string a hero would say if they are too afraid of the dangerLevel
 
-var dangerLevel = 80;
-var saveTheDay = "I have saved the day";
-var badExcuse = "Too scary for me!";
-
 function accessSituation(dangerLevel, saveTheDay, badExcuse) 
 
 // Your function should include an if/else statement that meets the following criteria
@@ -76,20 +72,24 @@ function accessSituation(dangerLevel, saveTheDay, badExcuse)
 //   - If the dangerLevel is below 10, it means it is not worth your time and should result in printing the string "Meh. Hard pass." to the console.
 
 function assessSituation(dangerLevel, saveTheDay, badExcuse) {
-  if (dangerLevel >= 50) {
+  if (dangerLevel > 50) {
     console.log(badExcuse);
-  } else if (50 > dangerLevel > 10) {
-    console.log(SaveTheDay);
+  } else if (dangerLevel >= 10 && dangerLevel <= 50) {
+    console.log(saveTheDay);
   } else {
    console.log("Meh. Hard Pass");
   }
+}
+
+assessSituation(80, "I have saved the day!", "Sorry, I think that's a job for another cat!")
 
 //Test Cases
 var announcement = 'Never fear, the Courageous Curly Bracket is here!'
 var excuse = 'I think I forgot to lock up my 1992 Toyota Coralla. Be right back.'
-// assessSituation(99, announcement, excuse) > Should print - 'I think I forgot to lock up my 1992 Toyota Coralla. Be right back.'
-//assessSituation(21, announcement, excuse) > should print - 'Never fear, the Courageous Curly Bracket is here!'
-//assessSituation(3, announcement, excuse) > should print - "Meh. Hard pass."
+
+assessSituation(99, announcement, excuse) // should print - 'I think I forgot to lock up my 1992 Toyota Coralla. Be right back.'
+assessSituation(21, announcement, excuse) // should print - 'Never fear, the Courageous Curly Bracket is here!'
+assessSituation(3, announcement, excuse) // should print - "Meh. Hard pass."
 
 
 // Declare a new variable - scaryMonster - assigned to an Object with the following key/values
@@ -106,7 +106,12 @@ var scaryMonster = {
   weight: 550,
   citiesDestroyed: ["Denver", "Boston", "New York"],
   luckNumbers: [7, 17, 21],
-  address: {number: 222, street: "River Road", state: "Ohio", zip: 43402}
+  address: {
+    number: 222, 
+    street: "River Road", 
+    state: "Ohio", 
+    zip: 43402
+  }
 };
 
 // Create a new class called SuperHero
@@ -124,10 +129,9 @@ class SuperHero {
     this.name = name;
     this.superpower = superpower;
     this.age = age;
-  },
-  static archNemesis = "The Syntax Error";
-  static powerLevel = 100;
-  static energyLevel = 50;
+    static.archNemesis = "The Syntax Error";
+    static.powerLevel = 100;
+    static.energyLevel = 50;
  }
   
 // - Create the following class methods
@@ -139,13 +143,12 @@ sayName() {
   console.log(this.name);
 }
 
-static maximizeEnergy() {
-energyLevel = 1000; 
+maximizeEnergy() {
+static.energyLevel = 1000; 
 }
 
-static gainPower(number) {
-this.number = number;
-console.log(this.number + powerLevel);
+gainPower(number) {
+static.powerLevel = static.powerLevel + number;
 } 
 
 // - Create 2 instances of your SuperHero class
