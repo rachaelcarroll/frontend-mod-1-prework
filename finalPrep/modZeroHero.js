@@ -10,7 +10,7 @@ var specialAbility = "Making tacos appear out of thin air";
 //   catchphrase should be assigned to a string that uses interpolation to include the specialAbility
 
 var greeting = "Hello, my name is " + heroName;
-var catchphrase = "Watch me ${specialAbility} right before your eyes!";
+var catchphrase = `Watch me ${specialAbility} right before your eyes!`;
 
 // Declare two variables - power AND energy - set to integers
 var power = 2;
